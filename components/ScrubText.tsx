@@ -84,7 +84,7 @@ export default function ScrubText({
                 w.toLowerCase().includes(h.toLowerCase())
               )
                 ? highlightColor
-                : "rgba(255,255,255,0.55)"
+                : "#ffffff"
             }
           />
         ))}

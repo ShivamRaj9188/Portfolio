@@ -254,7 +254,7 @@ export default function HeroScene({ isMobile }: { isMobile: boolean }) {
               initial={{ y: 200, opacity: 0, filter: "blur(10px)" }}
               animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
               transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
-              className="text-6xl md:text-[9vw] font-black uppercase leading-[0.85] text-transparent bg-clip-text bg-gradient-to-r from-[#ff003c] to-[#ff4d79] tracking-tighter"
+              className="text-6xl md:text-[9vw] font-black uppercase leading-[0.85] text-transparent bg-clip-text bg-gradient-to-r from-[#ff003c] to-[#cc0030] tracking-tighter"
               style={{ fontFamily: "'Orbitron', sans-serif" }}
             >
               DIGITAL

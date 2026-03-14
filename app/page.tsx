@@ -10,6 +10,7 @@ const SkillsGalaxy = dynamic(() => import("@/components/SkillsGalaxy"), { ssr: f
 const ProjectsUniverse = dynamic(() => import("@/components/ProjectsUniverse"), { ssr: false });
 const AchievementsScene = dynamic(() => import("@/components/AchievementsScene"), { ssr: false });
 const ContactPlanet = dynamic(() => import("@/components/ContactPlanet"), { ssr: false });
+const MottoSection = dynamic(() => import("@/components/MottoSection"), { ssr: false });
 
 import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
@@ -55,6 +56,12 @@ export default function Home() {
 
       {/* Scene 5: Achievements */}
       <AchievementsScene />
+
+      {/* Divider */}
+      <div className="w-full h-px bg-gradient-to-r from-transparent via-[#ff003c33] to-transparent" />
+
+      {/* Motto */}
+      <MottoSection />
 
       {/* Divider */}
       <div className="w-full h-px bg-gradient-to-r from-transparent via-[#ff003c33] to-transparent" />

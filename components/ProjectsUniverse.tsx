@@ -179,7 +179,7 @@ export default function ProjectsUniverse() {
               onMouseEnter={() => setHoveredProject(i)}
               onMouseLeave={() => setHoveredProject(null)}
               onClick={() => setSelectedProject(i)}
-              className="group relative border-b border-white/20 py-10 md:py-16 transition-colors duration-500 cursor-pointer interactive overflow-hidden"
+              className="group relative border-b border-white/20 py-10 md:py-16 transition-colors duration-500 cursor-pointer interactive"
             >
               {/* Hover Highlight Fill */}
               <div 

@@ -22,7 +22,7 @@ function ContactPlanetMesh() {
   return (
     <group>
       <Sphere ref={ref} args={[1.8, 32, 32]} position={[0, 0, 0]}>
-        <meshPhongMaterial color="#ff003c" emissive="#0039ff" emissiveIntensity={0.3} shininess={80} />
+        <meshPhongMaterial color="#ff003c" emissive="#ff003c" emissiveIntensity={0.3} shininess={80} />
       </Sphere>
       <Sphere ref={glowRef} args={[2.2, 16, 16]} position={[0, 0, 0]}>
         <meshPhongMaterial color="#ff003c" transparent opacity={0.08} />
@@ -98,7 +98,7 @@ function Stars() {
       <bufferGeometry>
         <bufferAttribute attach="attributes-position" args={[positions, 3]} />
       </bufferGeometry>
-      <pointsMaterial size={0.1} color="#7799ff" transparent opacity={0.7} />
+      <pointsMaterial size={0.1} color="#ff003c" transparent opacity={0.5} />
     </points>
   );
 }
