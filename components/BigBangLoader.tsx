@@ -125,6 +125,15 @@ function DispersingPlanets({ isExploding }: { isExploding: boolean }) {
 
 export default function BigBangLoader({ onEnter }: { onEnter: () => void }) {
   const [isExploding, setIsExploding] = useState(false);
+  const [isFlashing, setIsFlashing] = useState(false);
+
+  const handleInitiate = () => {
+    // Flash first, then explode
+    setIsFlashing(true);
+    setTimeout(() => {
+      setIsExploding(true);
+    }, 300); // Particles start 300ms after flash
+  };
 
   return (
     <motion.div 
@@ -155,7 +164,7 @@ export default function BigBangLoader({ onEnter }: { onEnter: () => void }) {
             transition={{ duration: 0.8 }}
           >
             <button 
-              onClick={() => setIsExploding(true)}
+              onClick={handleInitiate}
               className="group relative flex flex-col items-center justify-center cursor-pointer p-10"
             >
               {/* Outer Pulse Ring */}
@@ -174,6 +183,23 @@ export default function BigBangLoader({ onEnter }: { onEnter: () => void }) {
               </div>
             </button>
           </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Full-screen flash */}
+      <AnimatePresence>
+        {isFlashing && (
+          <motion.div
+            key="flash"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: [0, 1, 1, 0] }}
+            transition={{ duration: 0.6, times: [0, 0.1, 0.3, 1] }}
+            onAnimationComplete={() => setIsFlashing(false)}
+            className="absolute inset-0 z-[100] pointer-events-none"
+            style={{
+              background: "radial-gradient(circle, #ffffff, #ff003c44)",
+            }}
+          />
         )}
       </AnimatePresence>
     </motion.div>

@@ -199,13 +199,13 @@ function TrainingAchievement({ item }: { item: any }) {
 
 export default function JourneyScene() {
   return (
-    <section id="about" className="relative w-full min-h-screen flex items-center justify-start overflow-hidden py-32">
+    <section id="about" className="relative w-full overflow-hidden py-20">
       <JourneyCanvas />
 
       <div className="relative z-10 w-full md:w-8/12 lg:w-9/12 md:ml-[12.5%] px-6">
         
         {/* Section Header */}
-        <div className="mb-24">
+        <div className="mb-12">
           <p className="text-[#ff003c] text-sm md:text-base tracking-[0.5em] uppercase font-bold mb-8" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
             01 / Professional Vector
           </p>
@@ -213,13 +213,14 @@ export default function JourneyScene() {
           <ScrubText 
             text="Architecting intelligent systems through a fusion of advanced Full Stack technologies, Computer Vision, and Generative AI. Transforming complex technical challenges into streamlined, high-performance digital realities." 
             hoverText="Building absolute cinema in the digital world. I craft high-aura systems using MERN, AI, and Vision. No cap, we making top-tier tech that hits different. Skill level: Maxed."
-            className="text-4xl md:text-6xl lg:text-[5.5rem] font-black uppercase leading-[1] text-white tracking-tighter"
+            highlights={["Full Stack", "Vision", "Generative AI", "high-aura", "MERN", "AI", "Maxed", "digital realities", "absolute cinema"]}
+            className="text-3xl md:text-4xl lg:text-[3.5rem] font-black uppercase leading-[1.1] text-white tracking-tighter"
             style={{ fontFamily: "'Orbitron', sans-serif" }}
           />
         </div>
 
         {/* Training Section - Planetary Focus */}
-        <div className="mt-40 space-y-16">
+        <div className="mt-20 space-y-16">
           <div className="flex items-center gap-6 mb-12">
             <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#ff003c]/30 to-transparent" />
             <p className="text-[#ff003c] text-sm md:text-base tracking-[0.6em] uppercase font-black" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -236,7 +237,7 @@ export default function JourneyScene() {
         </div>
 
         {/* Education Timeline */}
-        <div className="mt-40 space-y-16">
+        <div className="mt-20 space-y-16">
           <p className="text-[#ff003c] text-sm md:text-base tracking-[0.6em] uppercase font-black border-b border-[#ff003c]/20 pb-6 mb-12" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
             Educational Core
           </p>

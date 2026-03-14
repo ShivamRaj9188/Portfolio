@@ -28,8 +28,11 @@ export default function ProjectModal({
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="modal-overlay"
+        className="fixed inset-0 z-[9999] bg-black/80 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto"
+        style={{ overscrollBehavior: 'contain' }}
         onClick={onClose}
+        onWheel={(e) => e.stopPropagation()}
+        onTouchMove={(e) => e.stopPropagation()}
       >
         <motion.div
           key="modal"
@@ -78,6 +81,7 @@ export default function ProjectModal({
           <div 
             className="p-8 md:p-12 relative z-10 overflow-y-auto custom-scrollbar flex-1"
             style={{ overscrollBehavior: 'contain' }}
+            onWheel={(e) => e.stopPropagation()}
           >
             {/* Header */}
             <div className="mb-10">
