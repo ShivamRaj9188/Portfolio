@@ -103,7 +103,7 @@ export const projects = [
     tech: ["React 19", "Spring Boot 3", "PostgreSQL", "Java 17", "JWT"],
     image: "/projects/gym.png",
     color: "#e2e8f0",
-    accentColor: "#ff4d79",
+    accentColor: "#cc0030",
     github: "https://github.com/ShivamRaj9188/Gym-Management-System.git",
     live: "https://gym-management-system-blond.vercel.app",
   },
