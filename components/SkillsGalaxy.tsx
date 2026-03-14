@@ -274,6 +274,8 @@ export default function SkillsGalaxy() {
           {allSkills.map((skill) => (
             <span
               key={skill.name + skill.category}
+              onMouseEnter={() => setHoveredSkill(skill.name)}
+              onMouseLeave={() => setHoveredSkill(null)}
               className="px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-[0.2em] glass border border-white/5 text-white/50 hover:text-white hover:border-[#ff003c]/40 hover:bg-[#ff003c]/10 transition-all duration-300 pointer-events-auto cursor-default interactive"
               style={{ fontFamily: "'Space Grotesk', sans-serif" }}
             >
