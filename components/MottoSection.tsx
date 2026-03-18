@@ -22,7 +22,7 @@ export default function MottoSection() {
           text="Things don't happen on their own — they are made to happen."
           hoverText="Bro things ain't gonna manifest themselves — you gotta lock in and make it happen fr fr no cap."
           highlights={["happen", "made", "manifest", "lock in", "no cap"]}
-          className="text-3xl md:text-4xl lg:text-[3.5rem] font-black uppercase leading-[1.1] text-white tracking-tighter"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-[3.5rem] font-black uppercase leading-[1.1] text-white tracking-tighter"
           style={{ fontFamily: "'Orbitron', sans-serif" }}
         />
 
@@ -90,8 +90,8 @@ export default function MottoSection() {
             </div>
 
             {/* Content */}
-            <div className="p-8 md:p-10">
-              <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tight mb-4" style={{ fontFamily: "'Orbitron', sans-serif" }}>
+            <div className="p-6 md:p-10">
+              <h3 className="text-xl md:text-3xl font-black text-white uppercase tracking-tight mb-4" style={{ fontFamily: "'Orbitron', sans-serif" }}>
                 {hackathon.name}
               </h3>
               <p className="text-white/60 text-sm md:text-base leading-relaxed font-medium" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>

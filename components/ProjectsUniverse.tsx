@@ -190,7 +190,7 @@ export default function ProjectsUniverse() {
               <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6 px-4 pointer-events-none">
                 <div className="flex flex-col gap-2">
                   <h3 
-                    className="text-4xl md:text-6xl lg:text-[6rem] font-black uppercase tracking-tighter text-white/50 group-hover:text-white transition-colors duration-500"
+                    className="text-3xl sm:text-4xl md:text-6xl lg:text-[6rem] font-black uppercase tracking-tighter text-white/50 group-hover:text-white transition-colors duration-500"
                     style={{ fontFamily: "'Orbitron', sans-serif", WebkitTextStroke: "1px rgba(255,255,255,0.2)" }}
                   >
                     {project.name}

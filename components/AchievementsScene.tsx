@@ -80,7 +80,7 @@ export default function AchievementsScene() {
             03 / Certifications
           </p>
           <h2 
-            className="text-4xl md:text-5xl lg:text-6xl font-black uppercase leading-[1.1] text-white tracking-tighter"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase leading-[1.1] text-white tracking-tighter"
             style={{ fontFamily: "'Orbitron', sans-serif" }}
           >
             Proof of Work

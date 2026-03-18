@@ -79,7 +79,7 @@ export default function ProjectModal({
           </div>
 
           <div 
-            className="p-8 md:p-12 relative z-10 overflow-y-auto custom-scrollbar flex-1"
+            className="p-6 md:p-12 relative z-10 overflow-y-auto custom-scrollbar flex-1"
             style={{ overscrollBehavior: 'contain' }}
             onWheel={(e) => e.stopPropagation()}
           >
@@ -91,7 +91,7 @@ export default function ProjectModal({
                   System Overview
                 </span>
               </div>
-              <h2 className="cinematic-title text-4xl md:text-6xl mb-3" style={{ color: project.color, textShadow: `0 0 30px ${project.color}88` }}>
+              <h2 className="cinematic-title text-2xl sm:text-4xl md:text-6xl mb-3" style={{ color: project.color, textShadow: `0 0 30px ${project.color}88` }}>
                 {project.name}
               </h2>
               <p className="text-white/60 text-sm tracking-widest uppercase font-medium" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>

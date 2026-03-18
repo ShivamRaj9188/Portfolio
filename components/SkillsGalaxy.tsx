@@ -231,7 +231,7 @@ export default function SkillsGalaxy() {
             02.5 / Proficiency
           </p>
           <h2 
-            className="text-4xl md:text-5xl lg:text-6xl font-black uppercase leading-[1.1] text-white tracking-tighter"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase leading-[1.1] text-white tracking-tighter"
             style={{ fontFamily: "'Orbitron', sans-serif" }}
           >
             Skills Engine
@@ -296,19 +296,19 @@ export default function SkillsGalaxy() {
           <p className="text-[#ff003c] text-xs tracking-[0.4em] uppercase font-black mb-6 text-center" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
             Tools & Platforms Overview
           </p>
-          <div className="glass-strong rounded-[2rem] overflow-hidden border border-white/5">
-            <table className="w-full text-left">
+          <div className="glass-strong rounded-[2rem] overflow-x-auto border border-white/5 custom-scrollbar">
+            <table className="w-full text-left min-w-[500px]">
               <thead>
                 <tr className="border-b border-white/10">
-                  <th className="px-6 py-4 text-[10px] uppercase tracking-[0.3em] text-[#ff003c] font-black" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Category</th>
-                  <th className="px-6 py-4 text-[10px] uppercase tracking-[0.3em] text-[#ff003c] font-black" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Tools</th>
+                  <th className="px-4 md:px-6 py-4 text-[10px] uppercase tracking-[0.3em] text-[#ff003c] font-black" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Category</th>
+                  <th className="px-4 md:px-6 py-4 text-[10px] uppercase tracking-[0.3em] text-[#ff003c] font-black" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Tools</th>
                 </tr>
               </thead>
               <tbody>
                 {toolsPlatformsTable.map((row, i) => (
                   <tr key={row.category} className={`border-b border-white/5 hover:bg-[#ff003c]/5 transition-colors duration-300 ${i === toolsPlatformsTable.length - 1 ? 'border-b-0' : ''}`}>
-                    <td className="px-6 py-4 text-xs text-white/80 font-bold uppercase tracking-wider" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{row.category}</td>
-                    <td className="px-6 py-4 text-xs text-white/50 font-medium" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{row.tools}</td>
+                    <td className="px-4 md:px-6 py-4 text-xs text-white/80 font-bold uppercase tracking-wider" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{row.category}</td>
+                    <td className="px-4 md:px-6 py-4 text-xs text-white/50 font-medium whitespace-nowrap md:whitespace-normal" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{row.tools}</td>
                   </tr>
                 ))}
               </tbody>

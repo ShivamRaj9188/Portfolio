@@ -244,7 +244,7 @@ export default function HeroScene({ isMobile }: { isMobile: boolean }) {
               initial={{ y: 200, opacity: 0, filter: "blur(10px)" }}
               animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
               transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
-              className="text-6xl md:text-[9vw] font-black uppercase leading-[0.85] text-white tracking-tighter"
+              className="text-4xl sm:text-6xl md:text-[9vw] font-black uppercase leading-[0.85] text-white tracking-tighter"
               style={{ fontFamily: "'Orbitron', sans-serif" }}
             >
               {developer.name.split(" ")[0]}
@@ -254,7 +254,7 @@ export default function HeroScene({ isMobile }: { isMobile: boolean }) {
               initial={{ y: 200, opacity: 0, filter: "blur(10px)" }}
               animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
               transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
-              className="text-6xl md:text-[9vw] font-black uppercase leading-[0.85] text-transparent bg-clip-text bg-gradient-to-r from-[#ff003c] to-[#cc0030] tracking-tighter"
+              className="text-4xl sm:text-6xl md:text-[9vw] font-black uppercase leading-[0.85] text-transparent bg-clip-text bg-gradient-to-r from-[#ff003c] to-[#cc0030] tracking-tighter"
               style={{ fontFamily: "'Orbitron', sans-serif" }}
             >
               {developer.name.split(" ")[1]}
@@ -286,7 +286,7 @@ export default function HeroScene({ isMobile }: { isMobile: boolean }) {
             <div className="flex flex-col sm:flex-row items-center gap-4 mt-4 pointer-events-auto">
               <button
                 onClick={() => scrollTo("#projects")}
-                className="px-10 py-5 rounded-full bg-white text-black font-black text-xs tracking-[0.3em] uppercase hover:scale-105 hover:bg-[#ff003c] hover:text-white transition-all duration-300 interactive shadow-[0_0_40px_rgba(255,0,60,0.3)]"
+                className="w-full sm:w-auto px-10 py-5 rounded-full bg-white text-black font-black text-xs tracking-[0.3em] uppercase hover:scale-105 hover:bg-[#ff003c] hover:text-white transition-all duration-300 interactive shadow-[0_0_40px_rgba(255,0,60,0.3)]"
                 style={{ fontFamily: "'Space Grotesk', sans-serif" }}
               >
                 Explore Work
@@ -295,7 +295,7 @@ export default function HeroScene({ isMobile }: { isMobile: boolean }) {
               <a
                 href={developer.resumeFile}
                 download="Shivam_Raj_CV.pdf"
-                className="px-10 py-5 rounded-full border border-[#ff003c]/40 text-white font-black text-xs tracking-[0.3em] uppercase hover:scale-105 hover:bg-[#ff003c]/10 hover:border-[#ff003c] transition-all duration-300 interactive shadow-[0_0_40px_rgba(255,0,60,0.1)]"
+                className="w-full sm:w-auto px-10 py-5 rounded-full border border-[#ff003c]/40 text-white font-black text-xs tracking-[0.3em] uppercase hover:scale-105 hover:bg-[#ff003c]/10 hover:border-[#ff003c] transition-all duration-300 interactive shadow-[0_0_40px_rgba(255,0,60,0.1)] text-center"
                 style={{ fontFamily: "'Space Grotesk', sans-serif" }}
               >
                 Download CV

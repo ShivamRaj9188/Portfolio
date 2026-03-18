@@ -3,7 +3,7 @@ import { useRef, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Float, Sphere, Torus } from "@react-three/drei";
 import * as THREE from "three";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { education, training, aboutMe } from "@/data/portfolio";
 import ScrubText from "./ScrubText";
 
@@ -96,15 +96,19 @@ function JourneyCanvas() {
   );
 }
 
-// Training Achievement Component with 3D Visuals
+// Training Achievement Component with Optimized 3D Visuals
 function TrainingAchievement({ item }: { item: any }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: false, amount: 0.1 }); 
+
   return (
     <motion.div
+      ref={ref}
       initial={{ opacity: 0, scale: 0.9 }}
       whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true, amount: 0.5 }}
+      viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.8 }}
-      className="group relative glass-strong px-8 py-12 rounded-[3.5rem] border border-white/5 hover:border-[#ff003c]/40 transition-all duration-700 flex flex-col md:flex-row items-center gap-12 overflow-hidden shadow-2xl"
+      className="group relative glass-strong px-6 py-10 md:px-8 md:py-12 rounded-[2.5rem] md:rounded-[3.5rem] border border-white/5 hover:border-[#ff003c]/40 transition-all duration-700 flex flex-col md:flex-row items-center gap-8 md:gap-12 overflow-hidden shadow-2xl"
     >
       {/* Background Orbital Glow */}
       <div className="absolute -inset-10 opacity-20 pointer-events-none group-hover:opacity-40 transition-opacity duration-1000"
@@ -115,37 +119,44 @@ function TrainingAchievement({ item }: { item: any }) {
       />
       
       {/* 3D Visual Section */}
-      <div className="w-full md:w-56 h-56 flex-shrink-0 relative">
-        <Canvas dpr={1} gl={{ antialias: false, alpha: true }}>
-          <ambientLight intensity={1} />
-          <pointLight position={[10, 10, 10]} intensity={2} color="#ff003c" />
-          <Float speed={2} rotationIntensity={1} floatIntensity={1}>
-            <Sphere args={[1.5, 32, 32]}>
-              <meshPhongMaterial
-                color="#ff003c"
-                emissive="#ff003c"
-                emissiveIntensity={0.5}
-                shininess={100}
-                wireframe={false}
-              />
-            </Sphere>
-            {/* Orbiting Ring */}
-            <Torus args={[2.5, 0.03, 8, 48]} rotation={[Math.PI / 2.5, 0, 0]}>
-              <meshPhongMaterial color="white" emissive="#ff4d79" emissiveIntensity={1} transparent opacity={0.6} />
-            </Torus>
-            {/* Achievement Satellites */}
-            {[0, 1, 2].map((i) => (
-              <mesh key={i} position={[Math.cos(i * 2.1) * 3, Math.sin(i * 2.1) * 3, 0]}>
-                <sphereGeometry args={[0.2, 8, 8]} />
-                <meshPhongMaterial color="#ff003c" emissive="#ff003c" emissiveIntensity={2} />
-              </mesh>
-            ))}
-          </Float>
-        </Canvas>
+      <div className="w-48 h-48 md:w-56 md:h-56 flex-shrink-0 relative">
+        {isInView ? (
+          <Canvas dpr={[1, 2]} gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}>
+            <ambientLight intensity={1} />
+            <pointLight position={[5, 5, 5]} intensity={1.5} color="#ff003c" />
+            <Float speed={1.5} rotationIntensity={0.8} floatIntensity={0.8}>
+              {/* Restored segments back to original high quality */}
+              <Sphere args={[1.5, 32, 32]}>
+                <meshPhongMaterial
+                  color="#ff003c"
+                  emissive="#ff003c"
+                  emissiveIntensity={0.5}
+                  shininess={80}
+                />
+              </Sphere>
+              {/* Restored segments for Torus */}
+              <Torus args={[2.5, 0.03, 8, 48]} rotation={[Math.PI / 2.5, 0, 0]}>
+                <meshPhongMaterial color="white" emissive="#ff4d79" emissiveIntensity={1} transparent opacity={0.6} />
+              </Torus>
+              {/* Achievement Satellites */}
+              {[0, 1, 2].map((i) => (
+                <mesh key={i} position={[Math.cos(i * 2.1) * 3, Math.sin(i * 2.1) * 3, 0]}>
+                  <sphereGeometry args={[0.2, 8, 8]} />
+                  <meshPhongMaterial color="#ff003c" emissive="#ff003c" emissiveIntensity={2} />
+                </mesh>
+              ))}
+            </Float>
+          </Canvas>
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center">
+            {/* Visual placeholder while off-screen */}
+            <div className="w-24 h-24 rounded-full bg-[#ff003c]/10 border border-[#ff003c]/20 animate-pulse" />
+          </div>
+        )}
         
         {/* Floating Icons/Labels Overlay */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div className="w-full h-full border border-white/10 rounded-full animate-spin-slow opacity-20" />
+          <div className="w-full h-full border border-white/5 rounded-full animate-spin-slow opacity-10" />
         </div>
       </div>
 
@@ -157,7 +168,7 @@ function TrainingAchievement({ item }: { item: any }) {
               <span className="w-3 h-3 rounded-full bg-[#ff003c] shadow-[0_0_15px_#ff003c] animate-pulse" />
               <span className="text-xs tracking-[0.4em] text-[#ff003c] font-black uppercase">Core Specialization</span>
             </div>
-            <h3 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter mb-2" style={{ fontFamily: "'Orbitron', sans-serif" }}>
+            <h3 className="text-2xl md:text-3xl lg:text-5xl font-black text-white uppercase tracking-tighter mb-2" style={{ fontFamily: "'Orbitron', sans-serif" }}>
               {item.title}
             </h3>
             <p className="text-[#ff4d79] text-base font-black tracking-widest uppercase mb-2">
@@ -225,7 +236,7 @@ export default function JourneyScene() {
             text="Full Stack Developer and AI Enthusiast — building intelligent, high-performance digital products from concept to deployment." 
             hoverText="Building absolute cinema in tech. MERN, AI, and Vision — we making top-tier systems that hit different."
             highlights={["Full Stack", "AI", "high-performance", "absolute cinema", "MERN", "top-tier"]}
-            className="text-3xl md:text-4xl lg:text-[3.5rem] font-black uppercase leading-[1.1] text-white tracking-tighter"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-[3.5rem] font-black uppercase leading-[1.1] text-white tracking-tighter"
             style={{ fontFamily: "'Orbitron', sans-serif" }}
           />
         </div>

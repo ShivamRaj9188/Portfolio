@@ -176,19 +176,19 @@ function ContactCanvas() {
 
 export default function ContactPlanet() {
   return (
-    <section id="contact" className="relative w-full min-h-screen flex items-center justify-start overflow-hidden py-32 bg-transparent">
+    <section id="contact" className="relative w-full min-h-screen flex items-center justify-start overflow-hidden py-24 md:py-32 bg-transparent">
       <div className="absolute inset-0 pointer-events-none z-0">
         <ContactCanvas />
       </div>
 
-      <div className="relative z-10 w-full md:w-8/12 lg:w-7/12 md:ml-[16.66%] px-6">
+      <div className="relative z-10 w-full md:w-8/12 lg:w-7/12 md:ml-[16.66%] px-6 mt-16 md:mt-0">
         {/* Header */}
         <div className="mb-20">
           <p className="text-[#ff003c] text-sm md:text-base tracking-[0.5em] uppercase font-bold mb-8" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
             04 / Contact
           </p>
           <h2 
-            className="text-4xl md:text-5xl lg:text-6xl font-black uppercase leading-[1.1] text-white tracking-tighter"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase leading-[1.1] text-white tracking-tighter"
             style={{ fontFamily: "'Orbitron', sans-serif" }}
           >
             Let&apos;s Connect
@@ -199,7 +199,7 @@ export default function ContactPlanet() {
         </div>
 
         {/* Contact Cards Grid */}
-        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6 mb-16 relative z-10">
+        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6 mb-20 md:mb-24 relative z-10 pt-4 md:pt-10">
           {contactLinks.map((contact, i) => (
             <motion.a
               key={contact.label}
@@ -220,7 +220,7 @@ export default function ContactPlanet() {
               <p className="font-bold text-white mb-2 group-hover:text-[#ff003c] transition-colors relative z-10 tracking-widest uppercase" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                 {contact.label}
               </p>
-              <p className="text-white/40 text-xs group-hover:text-white transition-colors relative z-10 font-bold" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+              <p className="text-white/40 text-[10px] md:text-xs group-hover:text-white transition-colors relative z-10 font-bold break-all px-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                 {contact.label === "Email" ? developer.email : contact.label === "Phone" ? developer.phone : contact.label === "GitHub" ? "ShivamRaj9188" : "shivam-raj-9s"}
               </p>
             </motion.a>
