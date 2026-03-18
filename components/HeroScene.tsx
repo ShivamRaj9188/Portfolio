@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { developer } from "@/data/portfolio";
 
 // Dense starfield using BufferGeometry
-function Starfield({ count = 5000 }: { count?: number }) {
+function Starfield({ count = 2000 }: { count?: number }) {
   const pointsRef = useRef<THREE.Points>(null);
 
   const [positions, sizes] = useMemo(() => {
@@ -57,7 +57,7 @@ function Starfield({ count = 5000 }: { count?: number }) {
 function Nebula() {
   const ref = useRef<THREE.Points>(null);
   const positions = useMemo(() => {
-    const count = 1500;
+    const count = 600;
     const arr = new Float32Array(count * 3);
     for (let i = 0; i < count; i++) {
       const r = Math.random() * 30 + 5;
@@ -186,7 +186,7 @@ function HeroCanvas({ isMobile }: { isMobile: boolean }) {
       <directionalLight position={[-5, -5, -5]} intensity={0.4} color="#ff1a53" />
       <pointLight position={[0, 0, 2]} intensity={2} color="#ff003c" distance={20} />
 
-      <Starfield count={isMobile ? 3000 : 8000} />
+      <Starfield count={isMobile ? 1500 : 3000} />
       <Nebula />
       <NeuralConnections />
 
@@ -234,11 +234,11 @@ export default function HeroScene({ isMobile }: { isMobile: boolean }) {
             className="overflow-hidden mb-8"
           >
             <p className="text-[#ff003c] text-sm md:text-base tracking-[0.5em] uppercase font-bold" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-              Shivam Raj — Portfolio 2026
+              Portfolio 2026
             </p>
           </motion.div>
  
-          {/* Massive Stacked Title */}
+          {/* Name + Role */}
           <div className="flex flex-col items-center justify-center relative">
             <motion.h1
               initial={{ y: 200, opacity: 0, filter: "blur(10px)" }}
@@ -247,7 +247,7 @@ export default function HeroScene({ isMobile }: { isMobile: boolean }) {
               className="text-6xl md:text-[9vw] font-black uppercase leading-[0.85] text-white tracking-tighter"
               style={{ fontFamily: "'Orbitron', sans-serif" }}
             >
-              BUILDING
+              {developer.name.split(" ")[0]}
             </motion.h1>
             
             <motion.h1
@@ -257,29 +257,30 @@ export default function HeroScene({ isMobile }: { isMobile: boolean }) {
               className="text-6xl md:text-[9vw] font-black uppercase leading-[0.85] text-transparent bg-clip-text bg-gradient-to-r from-[#ff003c] to-[#cc0030] tracking-tighter"
               style={{ fontFamily: "'Orbitron', sans-serif" }}
             >
-              DIGITAL
-            </motion.h1>
- 
-            <motion.h1
-              initial={{ y: 200, opacity: 0, filter: "blur(10px)" }}
-              animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-              transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1], delay: 0.6 }}
-              className="text-6xl md:text-[9vw] font-black uppercase leading-[0.85] text-white tracking-tighter"
-              style={{ fontFamily: "'Orbitron', sans-serif" }}
-            >
-              UNIVERSES
+              {developer.name.split(" ")[1]}
             </motion.h1>
           </div>
 
-          {/* Sub description / CTA */}
+          {/* Target Role */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.7 }}
+            className="mt-6 text-white/60 text-sm md:text-lg tracking-[0.3em] uppercase font-bold"
+            style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+          >
+            {developer.title}
+          </motion.p>
+
+          {/* Professional Headline + CTA */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.5, delay: 1.2 }}
-            className="mt-16 flex flex-col items-center gap-6 pointer-events-auto"
+            className="mt-10 flex flex-col items-center gap-6 pointer-events-auto"
           >
             <p className="text-white/50 max-w-lg text-sm md:text-base font-medium leading-relaxed" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-              I’m a selectively skilled Full Stack Developer & AI Enthusiast with a strong focus on producing high quality & impactful digital experiences.
+              {developer.headline}
             </p>
             
             <div className="flex flex-col sm:flex-row items-center gap-4 mt-4 pointer-events-auto">

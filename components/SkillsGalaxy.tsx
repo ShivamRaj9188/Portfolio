@@ -4,7 +4,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Float, Sphere, Box, Torus } from "@react-three/drei";
 import * as THREE from "three";
 import { motion, AnimatePresence } from "framer-motion";
-import { skills } from "@/data/portfolio";
+import { skills, toolsPlatformsTable } from "@/data/portfolio";
 
 // Central energy core
 function EnergyCore() {
@@ -251,8 +251,9 @@ export default function SkillsGalaxy() {
         >
           {[
             { label: "Languages", color: "#ff003c" },
-            { label: "Frameworks", color: "#ff1a53" },
-            { label: "Tools", color: "#ff0080" },
+            { label: "Frameworks & Libraries", color: "#ff1a53" },
+            { label: "Tools & Platforms", color: "#ff0080" },
+            { label: "OS & Scripting", color: "#ffd700" },
           ].map((cat) => (
             <div key={cat.label} className="flex items-center gap-3 glass-strong px-6 py-3 rounded-full border border-white/5 hover:border-[#ff003c]/30 transition-colors shadow-[0_4px_15px_rgba(0,0,0,0.5)] cursor-default">
               <span className="w-2.5 h-2.5 rounded-full shadow-[0_0_8px_currentColor]" style={{ background: cat.color, color: cat.color }} />
@@ -282,6 +283,37 @@ export default function SkillsGalaxy() {
               {skill.name}
             </span>
           ))}
+        </motion.div>
+
+        {/* Tools & Platforms Table */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 1, delay: 0.7 }}
+          className="mt-16 w-full max-w-3xl"
+        >
+          <p className="text-[#ff003c] text-xs tracking-[0.4em] uppercase font-black mb-6 text-center" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+            Tools & Platforms Overview
+          </p>
+          <div className="glass-strong rounded-[2rem] overflow-hidden border border-white/5">
+            <table className="w-full text-left">
+              <thead>
+                <tr className="border-b border-white/10">
+                  <th className="px-6 py-4 text-[10px] uppercase tracking-[0.3em] text-[#ff003c] font-black" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Category</th>
+                  <th className="px-6 py-4 text-[10px] uppercase tracking-[0.3em] text-[#ff003c] font-black" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Tools</th>
+                </tr>
+              </thead>
+              <tbody>
+                {toolsPlatformsTable.map((row, i) => (
+                  <tr key={row.category} className={`border-b border-white/5 hover:bg-[#ff003c]/5 transition-colors duration-300 ${i === toolsPlatformsTable.length - 1 ? 'border-b-0' : ''}`}>
+                    <td className="px-6 py-4 text-xs text-white/80 font-bold uppercase tracking-wider" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{row.category}</td>
+                    <td className="px-6 py-4 text-xs text-white/50 font-medium" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{row.tools}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </motion.div>
       </div>
     </section>

@@ -154,6 +154,29 @@ export default function ProjectModal({
               </div>
             </div>
 
+            {/* Skills Demonstrated */}
+            {project.skillsDemonstrated && project.skillsDemonstrated.length > 0 && (
+              <div className="mb-10">
+                <p className="cinematic-subtitle text-[10px] text-white/40 mb-4">
+                  Skills Demonstrated
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {project.skillsDemonstrated.map((skill: string, i: number) => (
+                    <motion.span
+                      key={skill}
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 0.3 + i * 0.05 }}
+                      className="px-4 py-2 rounded-full text-[10px] uppercase tracking-wider font-black glass border border-[#ff003c]/20 text-[#ff003c]/80"
+                      style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+                    >
+                      {skill}
+                    </motion.span>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {/* Links */}
             <div className="flex flex-col sm:flex-row gap-4">
               {project.live && (

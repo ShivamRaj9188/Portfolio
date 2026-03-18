@@ -4,7 +4,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Float, Sphere, Torus } from "@react-three/drei";
 import * as THREE from "three";
 import { motion } from "framer-motion";
-import { education, training } from "@/data/portfolio";
+import { education, training, aboutMe } from "@/data/portfolio";
 import ScrubText from "./ScrubText";
 
 // Floating platform
@@ -27,8 +27,8 @@ function Platform({ position, color, width = 3 }: { position: [number, number, n
 function DustParticles() {
   const ref = useRef<THREE.Points>(null);
   const positions = useMemo(() => {
-    const arr = new Float32Array(500 * 3);
-    for (let i = 0; i < 500; i++) {
+    const arr = new Float32Array(200 * 3);
+    for (let i = 0; i < 200; i++) {
       arr[i * 3]     = (Math.random() - 0.5) * 20;
       arr[i * 3 + 1] = (Math.random() - 0.5) * 10;
       arr[i * 3 + 2] = (Math.random() - 0.5) * 20;
@@ -160,9 +160,14 @@ function TrainingAchievement({ item }: { item: any }) {
             <h3 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter mb-2" style={{ fontFamily: "'Orbitron', sans-serif" }}>
               {item.title}
             </h3>
-            <p className="text-[#ff4d79] text-base font-black tracking-widest uppercase mb-4">
+            <p className="text-[#ff4d79] text-base font-black tracking-widest uppercase mb-2">
               {item.provider} • {item.period}
             </p>
+            {item.role && (
+              <p className="text-white/60 text-sm font-bold tracking-widest uppercase mb-4" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                Role: {item.role}
+              </p>
+            )}
           </div>
 
           {item.link && (
@@ -179,14 +184,20 @@ function TrainingAchievement({ item }: { item: any }) {
             </a>
           )}
         </div>
+
+        {item.tasks && (
+          <p className="text-white/60 text-sm leading-relaxed font-medium mb-4" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+            <span className="text-[#ff003c] font-black">Key Tasks:</span> {item.tasks}
+          </p>
+        )}
         
         <p className="text-white/70 text-base md:text-lg leading-relaxed font-medium mb-8" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
           {item.description}
         </p>
 
-        {/* Feature Tags */}
+        {/* Skills Gained Tags */}
         <div className="flex flex-wrap gap-3 justify-center md:justify-start">
-          {["AI Inconsistencies", "Database Optimization", "Git Workflow", "MERN Stack"].map((tag) => (
+          {(item.skillsGained || []).map((tag: string) => (
             <span key={tag} className="px-4 py-2 rounded-[1rem] bg-white/5 border border-white/10 text-[10px] text-white/50 uppercase font-black tracking-widest hover:border-[#ff003c]/40 hover:text-[#ff003c] transition-all duration-300">
               {tag}
             </span>
@@ -207,17 +218,44 @@ export default function JourneyScene() {
         {/* Section Header */}
         <div className="mb-12">
           <p className="text-[#ff003c] text-sm md:text-base tracking-[0.5em] uppercase font-bold mb-8" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-            01 / Professional Vector
+            01 / About Me
           </p>
           
           <ScrubText 
-            text="Architecting intelligent systems through a fusion of advanced Full Stack technologies, Computer Vision, and Generative AI. Transforming complex technical challenges into streamlined, high-performance digital realities." 
-            hoverText="Building absolute cinema in the digital world. I craft high-aura systems using MERN, AI, and Vision. No cap, we making top-tier tech that hits different. Skill level: Maxed."
-            highlights={["Full Stack", "Vision", "Generative AI", "high-aura", "MERN", "AI", "Maxed", "digital realities", "absolute cinema"]}
+            text="Full Stack Developer and AI Enthusiast — building intelligent, high-performance digital products from concept to deployment." 
+            hoverText="Building absolute cinema in tech. MERN, AI, and Vision — we making top-tier systems that hit different."
+            highlights={["Full Stack", "AI", "high-performance", "absolute cinema", "MERN", "top-tier"]}
             className="text-3xl md:text-4xl lg:text-[3.5rem] font-black uppercase leading-[1.1] text-white tracking-tighter"
             style={{ fontFamily: "'Orbitron', sans-serif" }}
           />
         </div>
+
+        {/* Career Snapshot */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          className="glass-strong rounded-[2rem] p-8 md:p-10 border border-white/5 hover:border-[#ff003c]/30 transition-all duration-500 mb-16 relative overflow-hidden"
+        >
+          <div className="absolute -inset-10 opacity-10 pointer-events-none"
+            style={{
+              background: `radial-gradient(circle at 30% 50%, #ff003c, transparent 60%)`,
+              filter: "blur(60px)"
+            }}
+          />
+          <div className="relative z-10">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="w-3 h-3 rounded-full bg-[#ff003c] shadow-[0_0_15px_#ff003c] animate-pulse" />
+              <span className="text-xs tracking-[0.4em] text-[#ff003c] font-black uppercase" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                Career Snapshot
+              </span>
+            </div>
+            <p className="text-white/70 text-base md:text-lg leading-relaxed font-medium" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+              {aboutMe}
+            </p>
+          </div>
+        </motion.div>
 
         {/* Training Section - Planetary Focus */}
         <div className="mt-20 space-y-16">

@@ -78,7 +78,7 @@ function EnergyField({ color, isHovered }: { color: string; isHovered: boolean }
   const targetColor = new THREE.Color(color);
   
   const positions = new Float32Array(
-    Array.from({ length: 400 * 3 }, (_, i) => {
+    Array.from({ length: 150 * 3 }, (_, i) => {
       const idx = i % 3;
       if (idx === 0) return 3 + (Math.random() - 0.5) * 10;
       if (idx === 1) return (Math.random() - 0.5) * 10;
@@ -111,7 +111,7 @@ function EnergyField({ color, isHovered }: { color: string; isHovered: boolean }
 // Background starfield
 function Stars() {
   const positions = new Float32Array(
-    Array.from({ length: 4000 * 3 }, () => (Math.random() - 0.5) * 150)
+    Array.from({ length: 1500 * 3 }, () => (Math.random() - 0.5) * 150)
   );
   return (
     <points>
@@ -128,7 +128,7 @@ function ProjectsCanvas({ hoveredIndex }: { hoveredIndex: number | null }) {
   const isHovered = hoveredIndex !== null;
 
   return (
-    <Canvas camera={{ position: [0, 0, 10], fov: 60 }} gl={{ antialias: true, alpha: true }} style={{ position: "absolute", inset: 0 }}>
+    <Canvas camera={{ position: [0, 0, 10], fov: 60 }} dpr={[1, 1.5]} gl={{ antialias: false, alpha: true }} style={{ position: "absolute", inset: 0 }}>
       <ambientLight intensity={0.1} />
       <directionalLight position={[-10, 10, 10]} intensity={0.2} />
       <Stars />

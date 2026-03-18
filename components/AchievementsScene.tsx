@@ -51,7 +51,7 @@ function KnowledgeCore() {
 
 function CertificationsCanvas() {
   return (
-    <Canvas camera={{ position: [0, 0, 10], fov: 60 }} gl={{ antialias: true, alpha: true }} style={{ position: "absolute", inset: 0 }}>
+    <Canvas camera={{ position: [0, 0, 10], fov: 60 }} dpr={[1, 1.5]} gl={{ antialias: false, alpha: true }} style={{ position: "absolute", inset: 0 }}>
       <ambientLight intensity={0.2} />
       <pointLight position={[10, 10, 10]} intensity={0.5} color="white" />
 

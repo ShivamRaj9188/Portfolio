@@ -1,14 +1,18 @@
 // Portfolio data — all developer information
 export const developer = {
   name: "Shivam Raj",
-  title: "Full Stack Developer",
+  title: "Full Stack Developer | AI Enthusiast",
   subtitle: "AI Enthusiast",
+  headline: "Engineering Intelligent Digital Experiences with Full Stack & AI",
   email: "shivamraj918815@gmail.com",
   phone: "+91 6399666608",
   linkedin: "https://www.linkedin.com/in/shivam-raj-9s",
   github: "https://github.com/ShivamRaj9188",
   resumeFile: "/Shivam_Raj_CV.pdf",
 };
+
+export const aboutMe =
+  "A Full Stack Developer and AI Enthusiast skilled in the MERN stack, Java, Spring Boot, and Maven. I chose Full Stack Development and AI because the most impactful digital products emerge at the intersection of clean engineering and intelligent automation. My goal is to engineer scalable, AI-integrated web applications that solve real-world problems — from concept to deployment.";
 
 export const education = [
   {
@@ -33,10 +37,13 @@ export const education = [
 
 export const training = [
   {
-    title: "FLAMES ’25 MERN with Gen AI",
+    title: "FLAMES '25 MERN with Gen AI",
     provider: "W3grads",
     period: "2025",
+    role: "Trainee Developer",
+    tasks: "Built full-stack MERN applications with Generative AI integration, streamlined Git workflows, and participated in daily SCRUMs.",
     description: "Addressed major development bottlenecks—skill gaps, AI inconsistencies, database lag, and deployment issues; streamlined workflows and optimized processes. Established strict Git workflows and daily SCRUMs to reduce collaboration hurdles.",
+    skillsGained: ["MERN Stack", "Generative AI", "Git Workflows", "Agile/SCRUM", "Database Optimization"],
     link: "https://drive.google.com/file/d/1bG9__h0E66NP9uDl3CW-yi3yVSJ7oivL/view?usp=sharing",
     image: "/certs/flames-25.png"
   }
@@ -44,11 +51,33 @@ export const training = [
 
 export const skills = {
   languages: ["C++", "Java", "Python"],
+  frameworksLibraries: ["React", "Node.js", "Express", "Spring Boot", "OpenCV", "NumPy", "Pandas"],
+  toolsPlatforms: ["Git", "GitHub", "MongoDB", "PostgreSQL", "Vercel"],
+  osScripting: ["Linux", "Bash", "Windows"],
+  // Keep old keys for backward compat with 3D orbital canvas
   frameworks: ["React", "Node.js", "Express", "Spring Boot"],
   libraries: ["OpenCV", "NumPy", "Pandas"],
   tools: ["Git", "GitHub", "Linux", "PostgreSQL"],
-  soft: ["Leadership", "Critical Thinking", "Articulation"],
+  soft: ["Leadership", "Critical Thinking", "Articulation", "Team Collaboration"],
 };
+
+export const softSkills = ["Articulation", "Organizer", "Critical Thinking", "Leadership"];
+
+export const hackathon = {
+  name: "Medha Hackathon",
+  description: "Collaborated on developing a wearable ECG vest and an efficient, non-invasive digital Blood Glucose Monitor — eliminating the need for patients to draw blood for regular monitoring. A 24-hour hackathon that sharpened problem-solving under pressure, cross-functional teamwork, and rapid prototyping for real-world healthcare challenges.",
+  image: "/hackathon-medha.jpeg",
+  link: "https://www.linkedin.com/feed/update/urn:li:activity:7238239903946268672/",
+};
+
+export const toolsPlatformsTable = [
+  { category: "Languages", tools: "C++, Java, Python" },
+  { category: "Frameworks & Libraries", tools: "React, Node.js, Express, Spring Boot, OpenCV, NumPy, Pandas" },
+  { category: "Databases", tools: "MongoDB, PostgreSQL" },
+  { category: "Tools & Platforms", tools: "Git, GitHub, Vercel, VS Code" },
+  { category: "OS & Scripting", tools: "Linux, Bash, Windows" },
+  { category: "Version Control", tools: "Git, GitHub" },
+];
 
 export const projects = [
   {
@@ -64,6 +93,7 @@ export const projects = [
       "Spending insights & forecasts",
     ],
     tech: ["MongoDB", "Express", "Node.js", "React"],
+    skillsDemonstrated: ["Full Stack Development", "AI/ML Integration", "RESTful API Design", "Data Visualization"],
     image: "/projects/fintrackai.png",
     color: "#ff4d79",
     accentColor: "#990024",
@@ -83,6 +113,7 @@ export const projects = [
       "Gamification with streaks & badges",
     ],
     tech: ["MongoDB", "Express", "Node.js", "React", "OpenCV", "MediaPipe", "TensorFlow"],
+    skillsDemonstrated: ["Computer Vision", "Real-time Processing", "Full Stack Development", "AI/ML Pipelines"],
     image: "/projects/repmate.png",
     color: "#ff80a0",
     accentColor: "#e2e8f0",
@@ -101,6 +132,7 @@ export const projects = [
       "Automated Notifications & Data Export",
     ],
     tech: ["React 19", "Spring Boot 3", "PostgreSQL", "Java 17", "JWT"],
+    skillsDemonstrated: ["Enterprise Architecture", "Authentication & Security", "Database Design", "Full Stack Java"],
     image: "/projects/gym.png",
     color: "#e2e8f0",
     accentColor: "#cc0030",

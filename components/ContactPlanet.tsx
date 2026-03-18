@@ -92,7 +92,7 @@ function OrbitTrail({ radius }: { radius: number }) {
 
 // Background stars
 function Stars() {
-  const positions = new Float32Array(3000 * 3).map(() => (Math.random() - 0.5) * 120);
+  const positions = new Float32Array(1200 * 3).map(() => (Math.random() - 0.5) * 120);
   return (
     <points>
       <bufferGeometry>
@@ -106,8 +106,9 @@ function Stars() {
 // Contact links — mapped without emojis
 const contactLinks = [
   { id: "github", label: "GitHub", link: developer.github, color: "#ffffff", orbitRadius: 4, speed: 0.5, angleOffset: 0 },
-  { id: "linkedin", label: "LinkedIn", link: developer.linkedin, color: "#990024", orbitRadius: 4, speed: 0.5, angleOffset: (2 * Math.PI) / 3 },
-  { id: "email", label: "Email", link: `mailto:${developer.email}`, color: "#ff4d79", orbitRadius: 4, speed: 0.5, angleOffset: (4 * Math.PI) / 3 },
+  { id: "linkedin", label: "LinkedIn", link: developer.linkedin, color: "#990024", orbitRadius: 4, speed: 0.5, angleOffset: Math.PI / 2 },
+  { id: "email", label: "Email", link: `mailto:${developer.email}`, color: "#ff4d79", orbitRadius: 4, speed: 0.5, angleOffset: Math.PI },
+  { id: "phone", label: "Phone", link: `tel:${developer.phone}`, color: "#ffd700", orbitRadius: 4, speed: 0.5, angleOffset: (3 * Math.PI) / 2 },
 ];
 
 function getIcon(id: string) {
@@ -130,6 +131,12 @@ function getIcon(id: string) {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
         </svg>
       );
+    case "phone":
+      return (
+        <svg className="w-8 h-8 mx-auto mb-3 text-[#ffd700]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+        </svg>
+      );
     default:
       return null;
   }
@@ -137,7 +144,7 @@ function getIcon(id: string) {
 
 function ContactCanvas() {
   return (
-    <Canvas camera={{ position: [0, 2, 10], fov: 55 }} gl={{ antialias: true, alpha: true }} style={{ position: "absolute", inset: 0 }}>
+    <Canvas camera={{ position: [0, 2, 10], fov: 55 }} dpr={[1, 1.5]} gl={{ antialias: false, alpha: true }} style={{ position: "absolute", inset: 0 }}>
       <ambientLight intensity={0.2} />
       <directionalLight position={[5, 10, 5]} intensity={0.4} />
       <Stars />
@@ -192,7 +199,7 @@ export default function ContactPlanet() {
         </div>
 
         {/* Contact Cards Grid */}
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 mb-16 relative z-10">
+        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6 mb-16 relative z-10">
           {contactLinks.map((contact, i) => (
             <motion.a
               key={contact.label}
@@ -214,7 +221,7 @@ export default function ContactPlanet() {
                 {contact.label}
               </p>
               <p className="text-white/40 text-xs group-hover:text-white transition-colors relative z-10 font-bold" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-                {contact.label === "Email" ? developer.email : `@${contact.label.toLowerCase()}`}
+                {contact.label === "Email" ? developer.email : contact.label === "Phone" ? developer.phone : contact.label === "GitHub" ? "ShivamRaj9188" : "shivam-raj-9s"}
               </p>
             </motion.a>
           ))}
