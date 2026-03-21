@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a"/>
+      <stop offset="100%" style="stop-color:#1a0a10"/>
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff003c"/>
+      <stop offset="60%" style="stop-color:#ff2d5e"/>
+      <stop offset="100%" style="stop-color:#ff003c"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="outerGlow">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feFlood flood-color="#ff003c" flood-opacity="0.4"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="512" height="512" rx="96" fill="url(#bg)"/>
+  
+  <!-- Subtle border -->
+  <rect x="2" y="2" width="508" height="508" rx="94" fill="none" stroke="#ff003c" stroke-opacity="0.2" stroke-width="2"/>
+  
+  <!-- SR Text with glow -->
+  <text x="256" y="310" text-anchor="middle" font-family="'Arial Black', 'Helvetica Neue', Arial, sans-serif" font-weight="900" font-size="240" fill="url(#textGrad)" filter="url(#outerGlow)" letter-spacing="-10">SR</text>
+  
+  <!-- Accent line bottom -->
+  <rect x="120" y="380" width="272" height="3" rx="1.5" fill="#ff003c" opacity="0.6"/>
+</svg>
