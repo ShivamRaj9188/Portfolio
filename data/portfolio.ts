@@ -97,8 +97,8 @@ export const projects = [
     image: "/projects/fintrackai.png",
     color: "#ff4d79",
     accentColor: "#990024",
-    github: "https://github.com/ShivamRaj9188",
-    live: "https://fintrackai-six.vercel.app",
+    github: "https://github.com/ShivamRaj9188/FinTrackAI_Secure",
+    live: "https://fin-track-ai-secure.vercel.app",
   },
   {
     id: "repmate",
