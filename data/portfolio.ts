@@ -117,7 +117,7 @@ export const projects = [
     image: "/projects/repmate.png",
     color: "#ff80a0",
     accentColor: "#e2e8f0",
-    github: "https://github.com/ShivamRaj9188",
+    github: "https://github.com/ShivamRaj9188/Repmate.git",
   },
   {
     id: "gym-management",
