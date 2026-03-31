@@ -292,14 +292,25 @@ export default function HeroScene({ isMobile }: { isMobile: boolean }) {
                 Explore Work
               </button>
               
-              <a
-                href={developer.resumeFile}
-                download="Shivam_Raj_CV.pdf"
-                className="w-full sm:w-auto px-10 py-5 rounded-full border border-[#ff003c]/40 text-white font-black text-xs tracking-[0.3em] uppercase hover:scale-105 hover:bg-[#ff003c]/10 hover:border-[#ff003c] transition-all duration-300 interactive shadow-[0_0_40px_rgba(255,0,60,0.1)] text-center"
-                style={{ fontFamily: "'Space Grotesk', sans-serif" }}
-              >
-                Download CV
-              </a>
+              <div className="flex flex-row items-center gap-3 w-full sm:w-auto mt-4 sm:mt-0">
+                <a
+                  href={developer.resumeFile}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto px-8 py-5 rounded-full border border-[#ff003c]/40 text-white font-black text-xs tracking-[0.3em] uppercase hover:scale-105 hover:bg-[#ff003c]/10 hover:border-[#ff003c] transition-all duration-300 interactive shadow-[0_0_40px_rgba(255,0,60,0.1)] text-center flex-1"
+                  style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+                >
+                  View CV
+                </a>
+                <a
+                  href={developer.resumeFile}
+                  download="Shivam_Raj_CV.pdf"
+                  className="p-5 rounded-full border border-[#ff003c]/40 text-white hover:scale-105 hover:bg-[#ff003c]/10 hover:border-[#ff003c] transition-all duration-300 interactive shadow-[0_0_40px_rgba(255,0,60,0.1)] flex items-center justify-center shrink-0"
+                  title="Download CV"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                </a>
+              </div>
             </div>
           </motion.div>
         </div>
