@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Shivam Raj — Full Stack Developer & AI Enthusiast",
   description:
-    "Award-winning cinematic portfolio of Shivam Raj — Full Stack Developer and AI Enthusiast. Explore a 3D universe of skills, projects, and achievements.",
+    "Portfolio of Shivam Raj, a Full Stack Developer and AI Enthusiast. Explore a 3D universe of skills, projects, and achievements.",
   keywords: ["Shivam Raj", "Full Stack Developer", "AI Enthusiast", "Portfolio", "React", "Next.js", "Three.js"],
   authors: [{ name: "Shivam Raj" }],
   openGraph: {

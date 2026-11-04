@@ -35,6 +35,18 @@ export const education = [
   },
 ];
 
+export const experience = [
+  {
+    title: "AI Lead",
+    provider: "Aispire Pvt Ltd",
+    period: "June 2026 – Present",
+    badge: "Current Role",
+    description: "Leading AI work at Aispire Pvt Ltd.",
+    link: "https://aispire.co.in",
+    linkLabel: "Visit Company",
+  },
+];
+
 export const training = [
   {
     title: "FLAMES '25 MERN with Gen AI",
@@ -50,7 +62,7 @@ export const training = [
 ];
 
 export const skills = {
-  languages: ["C++", "Java", "Python"],
+  languages: ["JavaScript", "TypeScript", "Java", "Python", "C++"],
   frameworksLibraries: ["React", "Node.js", "Express", "Spring Boot", "OpenCV", "NumPy", "Pandas"],
   toolsPlatforms: ["Git", "GitHub", "MongoDB", "PostgreSQL", "Vercel"],
   osScripting: ["Linux", "Bash", "Windows"],
@@ -64,7 +76,7 @@ export const skills = {
 export const softSkills = ["Articulation", "Organizer", "Critical Thinking", "Leadership"];
 
 export const toolsPlatformsTable = [
-  { category: "Languages", tools: "C++, Java, Python" },
+  { category: "Languages", tools: "JavaScript, TypeScript, Java, Python, C++" },
   { category: "Frameworks & Libraries", tools: "React, Node.js, Express, Spring Boot, OpenCV, NumPy, Pandas" },
   { category: "Databases", tools: "MongoDB, PostgreSQL" },
   { category: "Tools & Platforms", tools: "Git, GitHub, Vercel, VS Code" },
@@ -99,11 +111,11 @@ export const projects = [
     name: "RepMate",
     tagline: "AI-Powered Fitness Tracker",
     description:
-      "A real-time computer vision assistant and fitness tracking application that acts as your digital personal trainer. By utilizing native browser ML, it provides posture analysis, achieves 96% rep detection, and improves workout precision by 60% without requiring additional hardware.",
+      "A real-time computer vision fitness tracker that acts as your digital personal trainer. It counts reps and analyzes posture using only a webcam, achieves 96% rep detection, and improves workout precision by 60%, with a Python AI service streaming feedback over WebSockets.",
     features: [
       "Real-time AI tracking via MediaPipe with mathematical movement smoothing",
       "ML Form Classification (Random Forest) analyzing 5-frame moving windows",
-      "Strict Privacy: Ephemeral local memory processing without video recording",
+      "Privacy-focused: frames are processed in memory and never stored",
       "Gamified consistency (streaks, badges, rep-speed) boosting retention by 58%",
       "Personalized 7-day diet generation based on body metrics and goals",
       "Curated video library and multi-exercise support seamlessly integrated",

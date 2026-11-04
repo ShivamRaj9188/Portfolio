@@ -4,7 +4,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Float, Sphere, Torus } from "@react-three/drei";
 import * as THREE from "three";
 import { motion, useInView } from "framer-motion";
-import { education, training, aboutMe } from "@/data/portfolio";
+import { education, experience, training, aboutMe } from "@/data/portfolio";
 import ScrubText from "./ScrubText";
 
 // Floating platform
@@ -161,12 +161,12 @@ function TrainingAchievement({ item }: { item: any }) {
       </div>
 
       {/* Content Section */}
-      <div className="relative z-10 flex-1 text-center md:text-left">
-        <div className="flex flex-col md:flex-row md:items-center gap-4 mb-6">
+      <div className="relative z-10 flex-1 min-w-0 text-center md:text-left">
+        <div className="flex flex-col xl:flex-row xl:items-center gap-4 mb-6">
           <div className="flex-1">
             <div className="flex items-center gap-3 justify-center md:justify-start mb-2">
               <span className="w-3 h-3 rounded-full bg-[#ff003c] shadow-[0_0_15px_#ff003c] animate-pulse" />
-              <span className="text-xs tracking-[0.4em] text-[#ff003c] font-black uppercase">Core Specialization</span>
+              <span className="text-xs tracking-[0.4em] text-[#ff003c] font-black uppercase">{item.badge || "Core Specialization"}</span>
             </div>
             <h3 className="text-2xl md:text-3xl lg:text-5xl font-black text-white uppercase tracking-tighter mb-2" style={{ fontFamily: "'Orbitron', sans-serif" }}>
               {item.title}
@@ -186,9 +186,9 @@ function TrainingAchievement({ item }: { item: any }) {
               href={item.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-shrink-0 inline-flex items-center gap-4 px-8 py-4 rounded-full bg-white text-black font-black text-xs uppercase tracking-[0.2em] hover:bg-[#ff003c] hover:text-white transition-all duration-500 shadow-[0_0_30px_rgba(255,255,255,0.1)] group/btn"
+              className="flex-shrink-0 self-center md:self-start xl:self-center inline-flex items-center gap-4 px-8 py-4 rounded-full bg-white text-black font-black text-xs uppercase tracking-[0.2em] hover:bg-[#ff003c] hover:text-white transition-all duration-500 shadow-[0_0_30px_rgba(255,255,255,0.1)] group/btn"
             >
-              Verify Credential
+              {item.linkLabel || "Verify Credential"}
               <svg className="w-4 h-4 transform group-hover/btn:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
@@ -234,8 +234,8 @@ export default function JourneyScene() {
           
           <ScrubText 
             text="Full Stack Developer and AI Enthusiast — building intelligent, high-performance digital products from concept to deployment." 
-            hoverText="Building absolute cinema in tech. MERN, AI, and Vision — we making top-tier systems that hit different."
-            highlights={["Full Stack", "AI", "high-performance", "absolute cinema", "MERN", "top-tier"]}
+            hoverText="Turning ideas into working products with MERN, Spring Boot, AI, and computer vision."
+            highlights={["Full Stack", "AI", "high-performance", "MERN", "Spring Boot", "computer vision"]}
             className="text-2xl sm:text-3xl md:text-4xl lg:text-[3.5rem] font-black uppercase leading-[1.1] text-white tracking-tighter"
             style={{ fontFamily: "'Orbitron', sans-serif" }}
           />
@@ -268,12 +268,29 @@ export default function JourneyScene() {
           </div>
         </motion.div>
 
+        {/* Experience Section */}
+        <div className="mt-20 space-y-16">
+          <div className="flex items-center gap-6 mb-12">
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#ff003c]/30 to-transparent" />
+            <p className="text-[#ff003c] text-sm md:text-base tracking-[0.6em] uppercase font-black" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+              Experience
+            </p>
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#ff003c]/30 to-transparent" />
+          </div>
+
+          <div className="space-y-16 max-w-5xl mx-auto">
+            {experience.map((item, i) => (
+              <TrainingAchievement key={i} item={item} />
+            ))}
+          </div>
+        </div>
+
         {/* Training Section - Planetary Focus */}
         <div className="mt-20 space-y-16">
           <div className="flex items-center gap-6 mb-12">
             <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#ff003c]/30 to-transparent" />
             <p className="text-[#ff003c] text-sm md:text-base tracking-[0.6em] uppercase font-black" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-              Training / High Command
+              Training
             </p>
             <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#ff003c]/30 to-transparent" />
           </div>

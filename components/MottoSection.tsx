@@ -20,8 +20,8 @@ export default function MottoSection() {
 
         <ScrubText
           text="Things don't happen on their own — they are made to happen."
-          hoverText="Bro things ain't gonna manifest themselves — you gotta lock in and make it happen fr fr no cap."
-          highlights={["happen", "made", "manifest", "lock in", "no cap"]}
+          hoverText="Good results come from showing up, doing the work, and finishing what you start."
+          highlights={["happen", "made", "work", "finishing"]}
           className="text-2xl sm:text-3xl md:text-4xl lg:text-[3.5rem] font-black uppercase leading-[1.1] text-white tracking-tighter"
           style={{ fontFamily: "'Orbitron', sans-serif" }}
         />
