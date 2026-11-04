@@ -14,6 +14,7 @@ const navLinks = [
 const socialLinks = [
   { label: "IN", href: developer.linkedin },
   { label: "GH", href: developer.github },
+  { label: "LC", href: developer.leetcode },
   { label: "CV", href: developer.resumeFile },
   { label: "DL", href: developer.resumeFile, download: "Shivam_Raj_CV.pdf", title: "Download CV" },
 ];

@@ -8,6 +8,7 @@ export const developer = {
   phone: "+91 6399666608",
   linkedin: "https://www.linkedin.com/in/shivam-raj-9s",
   github: "https://github.com/ShivamRaj9188",
+  leetcode: "https://leetcode.com/u/ShivamRaj9",
   resumeFile: "/Shivam_Raj_CV.pdf",
 };
 
@@ -41,9 +42,10 @@ export const experience = [
     provider: "Aispire Pvt Ltd",
     period: "June 2026 – Present",
     badge: "Current Role",
-    description: "Leading AI work at Aispire Pvt Ltd.",
-    link: "https://aispire.co.in",
-    linkLabel: "Visit Company",
+    description: "Built the AI for Vyrix, a product of Aispire Pvt Ltd that gives design students a tailored research assistant. Its local AI helps students validate assumptions, spot gaps, and decide the next step in their projects.",
+    skillsGained: ["Local AI", "AI Product Development", "Research Assistant"],
+    link: "https://www.vyrix.in",
+    linkLabel: "Visit Vyrix",
   },
 ];
 
