@@ -63,13 +63,6 @@ export const skills = {
 
 export const softSkills = ["Articulation", "Organizer", "Critical Thinking", "Leadership"];
 
-export const hackathon = {
-  name: "Medha Hackathon",
-  description: "Collaborated on developing a wearable ECG vest and an efficient, non-invasive digital Blood Glucose Monitor — eliminating the need for patients to draw blood for regular monitoring. A 24-hour hackathon that sharpened problem-solving under pressure, cross-functional teamwork, and rapid prototyping for real-world healthcare challenges.",
-  image: "/hackathon-medha.jpeg",
-  link: "https://www.linkedin.com/feed/update/urn:li:activity:7238239903946268672/",
-};
-
 export const toolsPlatformsTable = [
   { category: "Languages", tools: "C++, Java, Python" },
   { category: "Frameworks & Libraries", tools: "React, Node.js, Express, Spring Boot, OpenCV, NumPy, Pandas" },
@@ -141,6 +134,26 @@ export const projects = [
     accentColor: "#cc0030",
     github: "https://github.com/ShivamRaj9188/Gym-Management-System.git",
     live: "https://gym-management-system-blond.vercel.app",
+  },
+  {
+    id: "campusgpt",
+    name: "CampusGPT",
+    tagline: "Private RAG Study Assistant",
+    description:
+      "A locally hosted academic assistant built on a Retrieval-Augmented Generation architecture. Students upload PDFs and chat with them through a small language model running on Ollama, so documents, embeddings, and chat history stay on their own hardware.",
+    features: [
+      "Semantic retrieval with pgvector and MMR re-ranking for relevant, varied context",
+      "Local inference with Llama 3.2 3B and Nomic embeddings via Ollama, streamed over SSE",
+      "6 smart study modes including 10-Mark Answer, Viva Prep, and Revision Blast",
+      "Embedding analytics with K-Means clustering, PCA maps, and LOF anomaly detection",
+      "JWT authentication, multi-session chat history, and study streaks",
+    ],
+    tech: ["Spring Boot 3", "React 18", "pgvector", "TypeScript", "PostgreSQL", "Ollama", "Docker"],
+    skillsDemonstrated: ["RAG Architecture", "Vector Search", "Local LLM Integration", "Unsupervised Learning"],
+    image: "/projects/campusgpt.png",
+    color: "#ff1a53",
+    accentColor: "#990024",
+    github: "https://github.com/ShivamRaj9188/CampusGPT",
   },
 ];
 

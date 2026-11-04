@@ -1,7 +1,7 @@
 "use client";
 import ScrubText from "@/components/ScrubText";
 import { motion } from "framer-motion";
-import { softSkills, hackathon } from "@/data/portfolio";
+import { softSkills } from "@/data/portfolio";
 
 export default function MottoSection() {
   return (
@@ -57,48 +57,6 @@ export default function MottoSection() {
               </motion.div>
             ))}
           </div>
-        </motion.div>
-
-        {/* Technical Extracurricular */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="mt-20"
-        >
-          <div className="flex items-center gap-6 mb-10">
-            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#ff003c]/30 to-transparent" />
-            <p className="text-[#ff003c] text-xs tracking-[0.4em] uppercase font-black" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-              Technical Extracurricular
-            </p>
-            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#ff003c]/30 to-transparent" />
-          </div>
-
-          <a href={hackathon.link} target="_blank" rel="noopener noreferrer" className="block glass-strong rounded-[2.5rem] overflow-hidden border border-white/5 hover:border-[#ff003c]/30 transition-all duration-500 relative group cursor-pointer">
-            {/* Hackathon Photo */}
-            <div className="w-full h-72 md:h-96 overflow-hidden relative">
-              <img
-                src={hackathon.image}
-                alt={hackathon.name}
-                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
-              <div className="absolute top-6 left-6 px-4 py-1.5 rounded-full bg-[#ff003c] text-white text-[10px] font-black tracking-widest uppercase shadow-lg">
-                Hackathon
-              </div>
-            </div>
-
-            {/* Content */}
-            <div className="p-6 md:p-10">
-              <h3 className="text-xl md:text-3xl font-black text-white uppercase tracking-tight mb-4" style={{ fontFamily: "'Orbitron', sans-serif" }}>
-                {hackathon.name}
-              </h3>
-              <p className="text-white/60 text-sm md:text-base leading-relaxed font-medium" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-                {hackathon.description}
-              </p>
-            </div>
-          </a>
         </motion.div>
       </div>
     </section>
